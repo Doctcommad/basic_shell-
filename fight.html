@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fight Game</title>
+    <style>
+        /* CSS styles for the game display go here */
+        #player {
+            width: 50px;
+            height: 50px;
+            background-color: blue;
+            position: absolute;
+            top: 100px;
+            left: 100px;
+        }
+
+        #enemy {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            position: absolute;
+            top: 100px;
+            right: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Fight Game</h1>
+    <div id="game-container">
+        <button id="play-button">PLAY</button>
+        <button id="help-button">HELP</button>
+        <button id="sword-button" disabled>Use Sword</button>
+        <button id="bow-arrow-button" disabled>Use Bow & Arrow</button>
+    </div>
+    <div id="player"></div>
+    <div id="enemy"></div>
+    <script>
+        const playerHealthDisplay = document.getElementById("player-health");
+        const enemyHealthDisplay = document.getElementById("enemy-health");
+        const swordButton = document.getElementById("sword-button");
+        const bowArrowButton = document.getElementById("bow-arrow-button");
+        const playButton = document.getElementById("play-button");
+        const helpButton = document.getElementById("help-button");
+
+        const player = document.getElementById("player");
+        const enemy = document.getElementById("enemy");
+
+        let playerHealth = 100;
+        let enemyHealth = 100;
+        let isPlayerTurn = true;
+        let gameStarted = false;
+
+        playButton.addEventListener("click", () => {
+            if (!gameStarted) {
+                gameStarted = true;
+                playButton.disabled = true;
+                helpButton.disabled = true;
+                swordButton.disabled = false;
+                bowArrowButton.disabled = false;
+            }
+        });
+
+        helpButton.addEventListener("click", () => {
+            alert("Help: Click 'PLAY' to start the game. Then, click 'Use Sword' or 'Use Bow & Arrow' to attack the enemy. Defeat the enemy before your health reaches zero.");
+        });
+
+        // Rest of the game logic remains the same
+        // ...
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,13 @@
+#!/bin/bash
+echo $((2 + 2))
+
+echo {A..z}
+
+echo {A..Z}
+
+echo $((100 / 1/5))
+
+echo $((15 *100))
+
+echo $((4 - 4))
+
